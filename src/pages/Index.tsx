@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useContent } from '@/hooks/useContent';
 import ParticleBackground from '@/components/ParticleBackground';
 import { Button } from '@/components/ui/button';
@@ -6,6 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { useToast } from '@/hooks/use-toast';
+import { Link } from 'react-router-dom';
 import { 
   Cpu, 
   Server, 
@@ -18,11 +20,49 @@ import {
 
 const Index = () => {
   const { content, loading, getContentBySection } = useContent();
+  const { toast } = useToast();
+  
+  // Contact form state
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     // Force dark mode for Negat Solutions branding
     document.documentElement.classList.add('dark');
   }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission - in a real app this would send to your backend
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
+      });
+      setFormData({ name: '', company: '', email: '', message: '' });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const FloatingIcon: React.FC<{ children: React.ReactNode; className?: string }> = ({ 
     children, 
@@ -46,6 +86,7 @@ const Index = () => {
             <a href="#services" className="hover:text-primary transition-smooth">Services</a>
             <a href="#about" className="hover:text-primary transition-smooth">About</a>
             <a href="#contact" className="hover:text-primary transition-smooth">Contact</a>
+            <Link to="/admin" className="hover:text-primary transition-smooth text-sm">Admin</Link>
           </div>
           <Button variant="default" className="animate-pulse-glow">
             Get a Consultation
@@ -250,31 +291,60 @@ const Index = () => {
               <CardTitle className="text-center text-2xl">Submit Your Inquiry</CardTitle>
             </CardHeader>
             <CardContent>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Your full name" />
+                    <Input 
+                      id="name" 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Your full name" 
+                      required
+                    />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="company">Company</Label>
-                    <Input id="company" placeholder="Your company" />
+                    <Input 
+                      id="company" 
+                      name="company"
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      placeholder="Your company" 
+                    />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="your.email@company.com" />
+                  <Input 
+                    id="email" 
+                    name="email"
+                    type="email" 
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="your.email@company.com" 
+                    required
+                  />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea 
                     id="message" 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     placeholder="Tell us about your project requirements..."
                     rows={4}
+                    required
                   />
                 </div>
-                <Button type="submit" className="w-full animate-pulse-glow">
-                  Submit Inquiry
+                <Button 
+                  type="submit" 
+                  className="w-full animate-pulse-glow"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
                 </Button>
               </form>
             </CardContent>
