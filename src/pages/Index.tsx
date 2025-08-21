@@ -13,11 +13,7 @@ import {
   Brain, 
   Clock, 
   Smartphone, 
-  Zap, 
-  Mail, 
-  Building,
-  User,
-  MessageSquare
+  Zap
 } from 'lucide-react';
 
 const Index = () => {
