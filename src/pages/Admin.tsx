@@ -320,8 +320,8 @@ const Admin: React.FC = () => {
                               {submission.email}
                             </a>
                           </TableCell>
-                          <TableCell className="max-w-xs">
-                            <div className="truncate" title={submission.message}>
+                          <TableCell className="max-w-md">
+                            <div className="whitespace-pre-wrap break-words" title={submission.message}>
                               {submission.message}
                             </div>
                           </TableCell>
