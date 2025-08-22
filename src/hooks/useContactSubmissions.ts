@@ -5,6 +5,7 @@ interface ContactSubmission {
   id: string;
   name: string;
   email: string;
+  company?: string;
   message: string;
   created_at: string;
 }
@@ -37,13 +38,13 @@ export const useContactSubmissions = () => {
     }
   };
 
-  const submitContact = async (name: string, email: string, message: string) => {
+  const submitContact = async (name: string, email: string, message: string, company?: string) => {
     try {
       setError(null);
 
       const { error: insertError } = await supabase
         .from('contact_submissions')
-        .insert({ name, email, message });
+        .insert({ name, email, message, company });
 
       if (insertError) {
         setError(insertError.message);

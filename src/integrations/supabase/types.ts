@@ -16,6 +16,7 @@ export type Database = {
     Tables: {
       contact_submissions: {
         Row: {
+          company: string | null
           created_at: string
           email: string
           id: string
@@ -23,6 +24,7 @@ export type Database = {
           name: string
         }
         Insert: {
+          company?: string | null
           created_at?: string
           email: string
           id?: string
@@ -30,6 +32,7 @@ export type Database = {
           name: string
         }
         Update: {
+          company?: string | null
           created_at?: string
           email?: string
           id?: string

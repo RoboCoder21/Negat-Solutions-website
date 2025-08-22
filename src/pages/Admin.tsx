@@ -303,6 +303,7 @@ const Admin: React.FC = () => {
                     <TableHeader>
                       <TableRow>
                         <TableHead>Name</TableHead>
+                        <TableHead>Company</TableHead>
                         <TableHead>Email</TableHead>
                         <TableHead>Message</TableHead>
                         <TableHead>Date</TableHead>
@@ -312,6 +313,9 @@ const Admin: React.FC = () => {
                       {submissions.map((submission) => (
                         <TableRow key={submission.id}>
                           <TableCell className="font-medium">{submission.name}</TableCell>
+                          <TableCell className="text-muted-foreground">
+                            {submission.company || 'Not provided'}
+                          </TableCell>
                           <TableCell>
                             <a 
                               href={`mailto:${submission.email}`}

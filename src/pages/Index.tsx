@@ -53,7 +53,8 @@ const Index = () => {
         .insert({ 
           name: formData.name, 
           email: formData.email, 
-          message: formData.message 
+          message: formData.message,
+          company: formData.company || null
         });
 
       if (error) {
