@@ -16,7 +16,7 @@ const Admin: React.FC = () => {
   const navigate = useNavigate();
   const { user, loading: authLoading, signIn, signOut } = useAuth();
   const { content, loading: contentLoading, updateContent, getContentBySection } = useContent();
-  const { submissions, loading: submissionsLoading } = useContactSubmissions();
+  const { submissions, loading: submissionsLoading, fetchSubmissions } = useContactSubmissions();
   const { toast } = useToast();
 
   const [isLoginMode, setIsLoginMode] = useState(true);
@@ -36,7 +36,7 @@ const Admin: React.FC = () => {
       setHeroSubheadline(getContentBySection('hero-subheadline'));
       setAboutContent(getContentBySection('about-content'));
     }
-  }, [user, authLoading, contentLoading, content]);
+  }, [user, authLoading, contentLoading, content, getContentBySection]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -265,9 +265,23 @@ const Admin: React.FC = () => {
           {/* Contact Submissions */}
           <Card className="glass-card">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Mail className="w-5 h-5" />
-                Contact Submissions
+              <CardTitle className="flex items-center justify-between w-full">
+                <div className="flex items-center gap-2">
+                  <Mail className="w-5 h-5" />
+                  Contact Submissions
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={fetchSubmissions}
+                  disabled={submissionsLoading}
+                >
+                  {submissionsLoading ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    'Refresh'
+                  )}
+                </Button>
               </CardTitle>
               <CardDescription>
                 View and manage contact form submissions from visitors
