@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useContent } from '@/hooks/useContent';
+import { supabase } from '@/integrations/supabase/client';
 import ParticleBackground from '@/components/ParticleBackground';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -45,9 +46,25 @@ const Index = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission - in a real app this would send to your backend
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      // Save to database
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({ 
+          name: formData.name, 
+          email: formData.email, 
+          message: formData.message 
+        });
+
+      if (error) {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
       toast({
         title: "Message Sent!",
         description: "Thank you for your inquiry. We'll get back to you within 24 hours.",

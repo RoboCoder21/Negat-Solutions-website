@@ -2,18 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { useContent } from '@/hooks/useContent';
+import { useContactSubmissions } from '@/hooks/useContactSubmissions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, LogOut, Save, User, Lock, Eye } from 'lucide-react';
+import { Loader2, LogOut, Save, User, Lock, Eye, Mail } from 'lucide-react';
 
 const Admin: React.FC = () => {
   const navigate = useNavigate();
   const { user, loading: authLoading, signIn, signOut } = useAuth();
   const { content, loading: contentLoading, updateContent, getContentBySection } = useContent();
+  const { submissions, loading: submissionsLoading } = useContactSubmissions();
   const { toast } = useToast();
 
   const [isLoginMode, setIsLoginMode] = useState(true);
@@ -204,9 +207,9 @@ const Admin: React.FC = () => {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="space-y-6">
           {/* Content Editor */}
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Card className="glass-card">
               <CardHeader>
                 <CardTitle>Hero Section Content</CardTitle>
@@ -257,10 +260,81 @@ const Admin: React.FC = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
 
+          {/* Contact Submissions */}
+          <Card className="glass-card">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Mail className="w-5 h-5" />
+                Contact Submissions
+              </CardTitle>
+              <CardDescription>
+                View and manage contact form submissions from visitors
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {submissionsLoading ? (
+                <div className="flex items-center justify-center py-8">
+                  <Loader2 className="h-6 w-6 animate-spin text-primary" />
+                  <span className="ml-2">Loading submissions...</span>
+                </div>
+              ) : submissions.length === 0 ? (
+                <div className="text-center py-8">
+                  <p className="text-muted-foreground">No contact submissions yet.</p>
+                </div>
+              ) : (
+                <div className="overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Name</TableHead>
+                        <TableHead>Email</TableHead>
+                        <TableHead>Message</TableHead>
+                        <TableHead>Date</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {submissions.map((submission) => (
+                        <TableRow key={submission.id}>
+                          <TableCell className="font-medium">{submission.name}</TableCell>
+                          <TableCell>
+                            <a 
+                              href={`mailto:${submission.email}`}
+                              className="text-primary hover:underline"
+                            >
+                              {submission.email}
+                            </a>
+                          </TableCell>
+                          <TableCell className="max-w-xs">
+                            <div className="truncate" title={submission.message}>
+                              {submission.message}
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            {new Date(submission.created_at).toLocaleDateString('en-US', {
+                              year: 'numeric',
+                              month: 'short',
+                              day: 'numeric',
+                              hour: '2-digit',
+                              minute: '2-digit'
+                            })}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Save Button */}
+          <div className="flex justify-center">
             <Button 
               onClick={handleSaveChanges} 
-              className="w-full"
+              className="px-8 py-3"
+              size="lg"
               disabled={saveLoading}
             >
               {saveLoading ? (
@@ -275,28 +349,6 @@ const Admin: React.FC = () => {
                 </>
               )}
             </Button>
-          </div>
-
-          {/* Image Management Placeholder */}
-          <div>
-            <Card className="glass-card">
-              <CardHeader>
-                <CardTitle>Image Management (Cloudflare)</CardTitle>
-                <CardDescription>
-                  Future feature for managing website images
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center">
-                  <div className="text-muted-foreground">
-                    <p className="text-lg font-medium">Coming Soon</p>
-                    <p className="text-sm mt-2">
-                      Image upload and management functionality will be implemented here using Cloudflare Image API
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </main>
