@@ -52,7 +52,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				'tech-green': 'hsl(var(--tech-green))',
+				'brand-orange': {
+					DEFAULT: 'hsl(var(--brand-orange))',
+					top: 'hsl(var(--brand-orange-top))',
+					shadow: 'hsl(var(--brand-orange-shadow))'
+				},
 				'dark-navy': 'hsl(var(--dark-navy))',
 				'glass': {
 					'bg': 'hsl(var(--glass-bg))',
@@ -97,8 +101,8 @@ export default {
 					'66%': { transform: 'translateY(5px) rotate(-1deg)' }
 				},
 				'pulse-glow': {
-					'0%, 100%': { boxShadow: '0 0 20px hsl(var(--tech-green) / 0.3)' },
-					'50%': { boxShadow: '0 0 40px hsl(var(--tech-green) / 0.6)' }
+					'0%, 100%': { boxShadow: '0 0 20px hsl(var(--brand-orange) / 0.3)' },
+					'50%': { boxShadow: '0 0 40px hsl(var(--brand-orange) / 0.6)' }
 				},
 				'fade-in': {
 					'0%': { opacity: '0', transform: 'translateY(20px)' },

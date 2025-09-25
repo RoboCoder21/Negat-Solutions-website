@@ -15,29 +15,31 @@ All colors MUST be HSL.
     --card-foreground: 218 100% 7%;
     --popover: 218 50% 96%;
     --popover-foreground: 218 100% 7%;
-    --primary: 174 100% 69%;
+    --primary: 33 94% 54%;
     --primary-foreground: 218 100% 7%;
     --secondary: 218 30% 90%;
     --secondary-foreground: 218 100% 7%;
     --muted: 218 30% 90%;
     --muted-foreground: 218 30% 40%;
-    --accent: 174 100% 69%;
+    --accent: 33 94% 54%;
     --accent-foreground: 218 100% 7%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 218 50% 96%;
     --border: 218 20% 85%;
     --input: 218 20% 85%;
-    --ring: 174 100% 69%;
+    --ring: 33 94% 54%;
 
-    /* Negat Solutions Brand Colors */
-    --tech-green: 174 100% 69%; /* #64FFDA */
+    /* Brand Colors - Orange Theme */
+    --brand-orange: 33 94% 54%; /* #f7941d - Base orange */
+    --brand-orange-top: 33 94% 65%; /* Lighter top variant */
+    --brand-orange-shadow: 33 94% 45%; /* Darker shadow variant */
     --dark-navy: 218 100% 7%; /* #0A192F */
     --glass-bg: 218 50% 10%;
-    --glass-border: 174 50% 50%;
+    --glass-border: 33 50% 50%;
     
     /* Animation Variables */
-    --glow-primary: 0 0 40px hsl(var(--tech-green) / 0.4);
-    --glow-secondary: 0 0 20px hsl(var(--tech-green) / 0.2);
+    --glow-primary: 0 0 40px hsl(var(--brand-orange) / 0.4);
+    --glow-secondary: 0 0 20px hsl(var(--brand-orange) / 0.2);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
     --radius: 0.75rem;
@@ -67,19 +69,19 @@ All colors MUST be HSL.
     --card-foreground: 0 0% 100%;
     --popover: 218 50% 10%;
     --popover-foreground: 0 0% 100%;
-    --primary: 174 100% 69%; /* Tech green */
+    --primary: 33 94% 54%; /* Orange */
     --primary-foreground: 218 100% 7%;
     --secondary: 218 30% 15%;
     --secondary-foreground: 0 0% 100%;
     --muted: 218 20% 20%;
     --muted-foreground: 218 10% 70%;
-    --accent: 174 100% 69%; /* Tech green */
+    --accent: 33 94% 54%; /* Orange */
     --accent-foreground: 218 100% 7%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
     --border: 218 30% 15%;
     --input: 218 30% 15%;
-    --ring: 174 100% 69%;
+    --ring: 33 94% 54%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -115,7 +117,7 @@ All colors MUST be HSL.
   
   .glass-card:hover {
     @apply bg-white/10 border-primary/30;
-    box-shadow: 0 8px 32px 0 rgba(100, 255, 218, 0.2);
+    box-shadow: 0 8px 32px 0 hsl(var(--brand-orange) / 0.2);
     transform: translateY(-2px);
     transition: var(--transition-smooth);
   }
@@ -143,10 +145,10 @@ All colors MUST be HSL.
   /* Hero Glow Edges */
   .hero-glow {
     background: linear-gradient(90deg, 
-      hsl(var(--tech-green) / 0.1) 0%, 
+      hsl(var(--brand-orange) / 0.1) 0%, 
       transparent 10%, 
       transparent 90%, 
-      hsl(var(--tech-green) / 0.1) 100%
+      hsl(var(--brand-orange) / 0.1) 100%
     );
   }
   
