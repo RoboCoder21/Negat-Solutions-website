@@ -63,7 +63,7 @@ All colors MUST be HSL.
 
   .dark {
     /* Negat Solutions Dark Theme - Primary */
-    --background: 218 100% 7%; /* Deep navy */
+    --background: 0 0% 0%; /* Pure black */
     --foreground: 0 0% 100%; /* Pure white */
     --card: 218 50% 10%; /* Slightly lighter navy */
     --card-foreground: 0 0% 100%;
