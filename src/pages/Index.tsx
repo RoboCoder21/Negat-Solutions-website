@@ -136,10 +136,10 @@ const Index = () => {
             {loading ? (
               <span className="animate-pulse bg-muted rounded h-16 w-full block"></span>
             ) : (
-              <AnimatedText 
+               <AnimatedText 
                 text={getContentBySection('hero-headline') || 'Innovative Technology Solutions for the Future'}
                 type="gradient"
-                className="text-glow"
+                className="text-glow font-orbitron"
                 delay={500}
               />
             )}
@@ -168,10 +168,10 @@ const Index = () => {
       <section id="services" className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-slide-up">
-            <AnimatedText 
+             <AnimatedText 
               text="Comprehensive Solutions, Two Key Areas"
               type="slide"
-              className="text-4xl md:text-5xl font-bold mb-4"
+              className="text-4xl md:text-5xl font-bold mb-4 font-orbitron"
               delay={200}
             />
           </div>
@@ -207,10 +207,10 @@ const Index = () => {
           <div className="space-y-16">
             {/* Advanced Hardware Integration */}
             <div className="animate-slide-up">
-              <AnimatedText 
+               <AnimatedText 
                 text="Advanced Hardware Integration"
                 type="glow"
-                className="text-3xl font-bold text-center mb-12 text-primary"
+                className="text-3xl font-bold text-center mb-12 text-primary font-orbitron"
                 delay={100}
               />
               <div className="grid md:grid-cols-3 gap-6">
@@ -254,10 +254,10 @@ const Index = () => {
 
             {/* Intelligent Software & Automation */}
             <div className="animate-slide-up">
-              <AnimatedText 
+               <AnimatedText 
                 text="Intelligent Software & Automation"
                 type="glow"
-                className="text-3xl font-bold text-center mb-12 text-primary"
+                className="text-3xl font-bold text-center mb-12 text-primary font-orbitron"
                 delay={100}
               />
               <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -293,7 +293,7 @@ const Index = () => {
       {/* About Section */}
       <section id="about" className="py-20 px-4 bg-card/50">
         <div className="container mx-auto max-w-4xl text-center animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+           <h2 className="text-4xl md:text-5xl font-bold mb-8 font-orbitron">
             Why Choose Negat?
           </h2>
           <div className="text-lg md:text-xl text-muted-foreground leading-relaxed">
@@ -317,7 +317,7 @@ const Index = () => {
       <section id="contact" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 animate-slide-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+             <h2 className="text-4xl md:text-5xl font-bold mb-4 font-orbitron">
               Get In Touch
             </h2>
             <p className="text-xl text-muted-foreground">
