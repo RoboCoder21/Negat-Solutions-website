@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useContent } from '@/hooks/useContent';
 import { supabase } from '@/integrations/supabase/client';
 import ParticleBackground from '@/components/ParticleBackground';
+import AnimatedText from '@/components/AnimatedText';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -135,20 +136,31 @@ const Index = () => {
             {loading ? (
               <span className="animate-pulse bg-muted rounded h-16 w-full block"></span>
             ) : (
-              getContentBySection('hero-headline') || 'Innovative Technology Solutions for the Future'
+              <AnimatedText 
+                text={getContentBySection('hero-headline') || 'Innovative Technology Solutions for the Future'}
+                type="gradient"
+                className="text-glow"
+                delay={500}
+              />
             )}
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
             {loading ? (
               <span className="animate-pulse bg-muted rounded h-8 w-3/4 block mx-auto"></span>
             ) : (
-              getContentBySection('hero-subheadline') || 
-              'Negat Solutions delivers cutting-edge hardware integration and intelligent software automation to transform your business operations and enhance security protocols.'
+              <AnimatedText 
+                text={getContentBySection('hero-subheadline') || 
+                'Negat Solutions delivers cutting-edge hardware integration and intelligent software automation to transform your business operations and enhance security protocols.'}
+                type="stagger"
+                delay={2000}
+              />
             )}
           </p>
-          <Button size="lg" className="text-lg px-8 py-3 animate-pulse-glow">
-            Explore Our Solutions
-          </Button>
+          <div className="animate-fade-in" style={{ animationDelay: '3s' }}>
+            <Button size="lg" className="text-lg px-8 py-3 animate-pulse-glow">
+              Explore Our Solutions
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -156,9 +168,12 @@ const Index = () => {
       <section id="services" className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-slide-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Comprehensive Solutions, Two Key Areas
-            </h2>
+            <AnimatedText 
+              text="Comprehensive Solutions, Two Key Areas"
+              type="slide"
+              className="text-4xl md:text-5xl font-bold mb-4"
+              delay={200}
+            />
           </div>
 
           {/* Main Service Cards */}
@@ -192,9 +207,12 @@ const Index = () => {
           <div className="space-y-16">
             {/* Advanced Hardware Integration */}
             <div className="animate-slide-up">
-              <h3 className="text-3xl font-bold text-center mb-12 text-primary">
-                Advanced Hardware Integration
-              </h3>
+              <AnimatedText 
+                text="Advanced Hardware Integration"
+                type="glow"
+                className="text-3xl font-bold text-center mb-12 text-primary"
+                delay={100}
+              />
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="glass-card">
                   <CardHeader className="text-center">
@@ -236,9 +254,12 @@ const Index = () => {
 
             {/* Intelligent Software & Automation */}
             <div className="animate-slide-up">
-              <h3 className="text-3xl font-bold text-center mb-12 text-primary">
-                Intelligent Software & Automation
-              </h3>
+              <AnimatedText 
+                text="Intelligent Software & Automation"
+                type="glow"
+                className="text-3xl font-bold text-center mb-12 text-primary"
+                delay={100}
+              />
               <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <Card className="glass-card">
                   <CardHeader className="text-center">

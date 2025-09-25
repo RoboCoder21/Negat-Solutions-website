@@ -171,8 +171,98 @@ All colors MUST be HSL.
     66% { transform: translateY(5px) rotate(-1deg); }
   }
   
+  /* Text Animation Keyframes */
+  @keyframes typewriter {
+    0% { width: 0; }
+    100% { width: 100%; }
+  }
+  
+  @keyframes blink {
+    0%, 50% { border-right-color: transparent; }
+    51%, 100% { border-right-color: hsl(var(--primary)); }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes textReveal {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  @keyframes glitch {
+    0%, 100% { text-shadow: 0 0 0 hsl(var(--primary)); }
+    25% { text-shadow: -2px 0 0 hsl(var(--primary)), 2px 0 0 hsl(var(--accent)); }
+    50% { text-shadow: 2px 0 0 hsl(var(--primary)), -2px 0 0 hsl(var(--accent)); }
+    75% { text-shadow: -1px 0 0 hsl(var(--primary)), 1px 0 0 hsl(var(--accent)); }
+  }
+  
   /* Smooth Transitions */
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+  
+  /* Text Animation Classes */
+  .typewriter {
+    overflow: hidden;
+    border-right: 3px solid hsl(var(--primary));
+    white-space: nowrap;
+    animation: typewriter 4s steps(40, end), blink 1s step-end infinite;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--brand-orange-top)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: textReveal 3s ease-in-out infinite;
+  }
+  
+  .text-stagger > * {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .text-stagger > *:nth-child(1) { animation-delay: 0.1s; }
+  .text-stagger > *:nth-child(2) { animation-delay: 0.2s; }
+  .text-stagger > *:nth-child(3) { animation-delay: 0.3s; }
+  .text-stagger > *:nth-child(4) { animation-delay: 0.4s; }
+  .text-stagger > *:nth-child(5) { animation-delay: 0.5s; }
+  .text-stagger > *:nth-child(6) { animation-delay: 0.6s; }
+  
+  .text-slide-in {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+  
+  .text-glitch {
+    animation: glitch 0.3s ease-in-out infinite alternate;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
   }
 }
