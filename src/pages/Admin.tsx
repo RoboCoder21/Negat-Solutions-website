@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { useContent } from '@/hooks/useContent';
@@ -106,7 +106,7 @@ const Admin: React.FC = () => {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#282421' }}>
         <div className="flex items-center gap-2">
           <Loader2 className="h-6 w-6 animate-spin text-primary" />
           <span className="text-lg">Loading admin panel...</span>
@@ -117,7 +117,7 @@ const Admin: React.FC = () => {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+  <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: '#282421' }}>
         <Card className="w-full max-w-md glass-card">
           <CardHeader className="text-center">
             <CardTitle className="flex items-center justify-center gap-2">
@@ -174,7 +174,7 @@ const Admin: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+  <div className="min-h-screen" style={{ backgroundColor: '#282421' }}>
       {/* Header */}
       <header className="border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -186,7 +186,7 @@ const Admin: React.FC = () => {
           </div>
           <div className="flex items-center gap-4">
             <Button
-              variant="outline"
+              variant={"outline"}
               onClick={() => navigate('/')}
               className="flex items-center gap-2"
             >
@@ -194,7 +194,7 @@ const Admin: React.FC = () => {
               View Site
             </Button>
             <Button
-              variant="outline"
+              variant={"outline"}
               onClick={handleLogout}
               className="flex items-center gap-2"
             >
@@ -352,7 +352,7 @@ const Admin: React.FC = () => {
             <Button 
               onClick={handleSaveChanges} 
               className="px-8 py-3"
-              size="lg"
+              size={"lg"}
               disabled={saveLoading}
             >
               {saveLoading ? (

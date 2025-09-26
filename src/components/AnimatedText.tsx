@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 interface AnimatedTextProps {
@@ -21,32 +21,48 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
+    let interval: NodeJS.Timeout | undefined;
+    let timer: NodeJS.Timeout | undefined;
     if (type === 'typewriter') {
-      const timer = setTimeout(() => {
+      timer = setTimeout(() => {
         setIsAnimating(true);
-        const interval = setInterval(() => {
+        setCurrentIndex(0);
+        setDisplayText('');
+        interval = setInterval(() => {
           setCurrentIndex((prevIndex) => {
             if (prevIndex < text.length) {
               setDisplayText(text.slice(0, prevIndex + 1));
               return prevIndex + 1;
             } else {
-              clearInterval(interval);
-              return prevIndex;
+              setTimeout(() => {
+                setCurrentIndex(0);
+                setDisplayText('');
+              }, 1000); // Pause before restarting
+              return 0;
             }
           });
         }, speed);
-        
-        return () => clearInterval(interval);
       }, delay);
-      
-      return () => clearTimeout(timer);
+      return () => {
+        if (interval) clearInterval(interval);
+        if (timer) clearTimeout(timer);
+      };
+    } else if (type === 'stagger') {
+      setIsAnimating(false);
+      timer = setTimeout(() => {
+        setIsAnimating(true);
+        // Restart the animation after all words are shown
+        setTimeout(() => setIsAnimating(false), text.split(' ').length * 100 + 1000);
+      }, delay);
+      return () => {
+        if (timer) clearTimeout(timer);
+      };
     } else {
-      // For non-typewriter animations, show full text immediately
       setDisplayText(text);
-      const timer = setTimeout(() => setIsAnimating(true), delay);
+      timer = setTimeout(() => setIsAnimating(true), delay);
       return () => clearTimeout(timer);
     }
-  }, [text, type, delay, speed]);
+  }, [text, type, delay, speed, isAnimating]);
 
   const getAnimationClass = () => {
     switch (type) {
