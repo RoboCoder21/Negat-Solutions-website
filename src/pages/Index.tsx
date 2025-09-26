@@ -1,5 +1,6 @@
 import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
+import Navbar from '@/components/Navbar';
 import ParticleBackground from '@/components/ParticleBackground';
 import LogoSwitcher from '@/components/LogoSwitcher';
 import { Button } from '@/components/ui/button';
@@ -15,24 +16,7 @@ const Index = () => {
   return (
   <div className="min-h-screen" style={{ backgroundColor: '#16191c', color: 'white' }}>
       {/* Navigation */}
-      <nav className="fixed top-0 w-full border-b border-white/10 z-50" style={{ backgroundColor: '#3b3127' }}>
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <LogoSwitcher />
-            <span className="text-2xl font-bold">Negat<span className="text-primary">Solutions</span></span>
-          </div>
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="hover:text-primary transition-smooth">Home</a>
-            <Link to="/solutions" className="hover:text-primary transition-smooth">Solutions</Link>
-            <Link to="/about" className="hover:text-primary transition-smooth">About Us</Link>
-            <Link to="/contact" className="hover:text-primary transition-smooth">Contact</Link>
-            <Link to="/admin" className="hover:text-primary transition-smooth text-sm">Admin</Link>
-          </div>
-          <Button className="animate-pulse-glow">
-            Get a Consultation
-          </Button>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section Only */}
       <section id="home" className="relative min-h-screen flex items-center justify-center hero-glow">
