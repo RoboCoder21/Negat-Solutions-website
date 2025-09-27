@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 // Update these filenames to match your actual logo image names
 const logos = [
-  '\\public\\images\\Artboard_34_copy-removebg-preview.png',
-  '\\public\\images\\Artboard_34-removebg-preview.png', // Second logo (e.g., red)
+  '/images/Artboard_34_copy-removebg-preview.png',
+  '/images/Artboard_34-removebg-preview.png', // Second logo (e.g., red)
 ];
 
 const SWITCH_INTERVAL = 2000; // ms (2 seconds)
