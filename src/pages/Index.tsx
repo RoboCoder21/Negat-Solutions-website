@@ -13,8 +13,20 @@ const FloatingIcon: React.FC<{ children: React.ReactNode; className?: string }> 
 
 const Index = () => {
   const navigate = useNavigate();
+  const [headlineIndex, setHeadlineIndex] = React.useState(0);
+  const headlines = [
+    'Innovative Technology Solutions for the Future',
+    'Better Solutions for a New Day',
+  ];
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setHeadlineIndex((prev) => (prev + 1) % headlines.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-  <div className="min-h-screen" style={{ backgroundColor: '#16191c', color: 'white' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#16191c', color: 'white' }}>
       {/* Navigation */}
       <Navbar />
 
@@ -37,12 +49,12 @@ const Index = () => {
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4 animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
             <AnimatedText 
-              text={'Innovative Technology Solutions for the Future'}
+              text={headlines[headlineIndex]}
               type="gradient"
               className="text-glow font-orbitron text-white"
               delay={0}
               speed={60}
-              key={Date.now()}
+              key={headlineIndex}
             />
           </h1>
           <p className="text-xl md:text-2xl mb-8 leading-relaxed text-white">
