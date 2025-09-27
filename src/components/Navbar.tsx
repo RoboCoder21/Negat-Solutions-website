@@ -9,12 +9,14 @@ const Navbar: React.FC = () => {
   return (
     <nav className="sticky top-0 w-full border-b border-white/10 z-50" style={{ backgroundColor: '#3b3127' }}>
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex flex-col items-center justify-center w-full md:flex-row md:items-center md:justify-start md:space-x-3">
-          <LogoSwitcher />
-          <span className="text-2xl font-bold mt-1 md:mt-0 md:ml-2 text-center md:text-left block w-full md:w-auto">
-            <span style={{ color: 'white' }}>Negat</span>
-            <span className="text-primary">Solutions</span>
-          </span>
+        <div className="w-full flex flex-col items-center justify-center md:flex-row md:items-center md:justify-start md:space-x-3">
+          <div className="w-full flex flex-col items-center md:flex-row md:w-auto">
+            <LogoSwitcher />
+            <span className="text-2xl font-bold mt-2 md:mt-0 md:ml-2 text-center md:text-left w-full md:w-auto">
+              <span style={{ color: 'white' }}>Negat</span>
+              <span className="text-primary">Solutions</span>
+            </span>
+          </div>
         </div>
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
