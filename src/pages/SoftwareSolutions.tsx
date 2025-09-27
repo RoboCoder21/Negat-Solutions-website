@@ -41,7 +41,7 @@ const SoftwareSolutions: React.FC = () => {
               </CardHeader>
               <CardContent>
                   <p className="text-white text-center">
-                    Intelligent automation to streamline your operations.
+                    Streamlined mobile and web applications for your business needs.
                   </p>
               </CardContent>
             </Card>
@@ -52,7 +52,7 @@ const SoftwareSolutions: React.FC = () => {
               </CardHeader>
               <CardContent>
                   <p className="text-white text-center">
-                    Intelligent automation to streamline your operations.
+                    Connecting your software with existing systems for seamless data flow.
                   </p>
               </CardContent>
             </Card>

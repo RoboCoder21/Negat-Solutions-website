@@ -13,13 +13,28 @@ const AIAutomations: React.FC = () => {
             <h2 className="text-3xl font-bold mb-4 font-orbitron" style={{ color: '#ff7f00', textShadow: '0 0 16px #ff7f00, 0 0 32px #ff7f00' }}>
               AI Automations: Key Features
             </h2>
-            <ul className="text-lg md:text-xl leading-relaxed text-white list-disc list-inside mx-auto" style={{ maxWidth: 600 }}>
-              <li>Email and calendar management automation</li>
-              <li>Intelligent agents for customer support</li>
-              <li>Conversational AI for chatbots and virtual assistants</li>
-              <li>Automated data entry and reporting</li>
-              <li>Workflow automation for repetitive tasks</li>
-            </ul>
+            <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="glass-card p-6 text-center" style={{ backgroundColor: '#282421', color: 'white' }}>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ff7f00' }}>Email & Calendar Automation</h3>
+                <p>Automate scheduling, reminders, and email management.</p>
+              </div>
+              <div className="glass-card p-6 text-center" style={{ backgroundColor: '#282421', color: 'white' }}>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ff7f00' }}>Intelligent Agents</h3>
+                <p>AI-powered customer support and virtual assistants.</p>
+              </div>
+              <div className="glass-card p-6 text-center" style={{ backgroundColor: '#282421', color: 'white' }}>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ff7f00' }}>Conversational AI</h3>
+                <p>Chatbots and voice assistants for seamless interaction.</p>
+              </div>
+              <div className="glass-card p-6 text-center" style={{ backgroundColor: '#282421', color: 'white' }}>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ff7f00' }}>Automated Data Entry & Reporting</h3>
+                <p>Reduce manual work with smart data automation.</p>
+              </div>
+              <div className="glass-card p-6 text-center md:col-span-2" style={{ backgroundColor: '#282421', color: 'white' }}>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ff7f00' }}>Workflow Automation</h3>
+                <p>Streamline repetitive tasks and business processes.</p>
+              </div>
+            </div>
           </div>
         </div>
         <div className="flex justify-center pb-8">

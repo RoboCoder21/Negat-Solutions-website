@@ -13,13 +13,28 @@ const DesignSolutions: React.FC = () => {
             <h2 className="text-3xl font-bold mb-4 font-orbitron" style={{ color: '#ff7f00', textShadow: '0 0 16px #ff7f00, 0 0 32px #ff7f00' }}>
               Design Solutions: Key Features
             </h2>
-            <ul className="text-lg md:text-xl leading-relaxed text-white list-disc list-inside mx-auto" style={{ maxWidth: 600 }}>
-              <li>Brand identity and logo creation</li>
-              <li>Event branding and promotional materials</li>
-              <li>Print and digital design (flyers, posters, social media)</li>
-              <li>Custom creative projects tailored to your needs</li>
-              <li>UI/UX design for web and mobile applications</li>
-            </ul>
+            <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="glass-card p-6 text-center" style={{ backgroundColor: '#282421', color: 'white' }}>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ff7f00' }}>Brand Identity & Logo Creation</h3>
+                <p>Distinctive branding and logo design for your business.</p>
+              </div>
+              <div className="glass-card p-6 text-center" style={{ backgroundColor: '#282421', color: 'white' }}>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ff7f00' }}>Event Branding & Promo Materials</h3>
+                <p>Custom event branding and promotional collateral.</p>
+              </div>
+              <div className="glass-card p-6 text-center" style={{ backgroundColor: '#282421', color: 'white' }}>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ff7f00' }}>Print & Digital Design</h3>
+                <p>Flyers, posters, and social media graphics for all platforms.</p>
+              </div>
+              <div className="glass-card p-6 text-center" style={{ backgroundColor: '#282421', color: 'white' }}>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ff7f00' }}>Custom Creative Projects</h3>
+                <p>Unique creative solutions tailored to your needs.</p>
+              </div>
+              <div className="glass-card p-6 text-center md:col-span-2" style={{ backgroundColor: '#282421', color: 'white' }}>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ff7f00' }}>UI/UX Design</h3>
+                <p>Modern UI/UX for web and mobile applications.</p>
+              </div>
+            </div>
           </div>
         </div>
         <div className="flex justify-center pb-8">
