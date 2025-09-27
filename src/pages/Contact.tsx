@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -6,9 +6,28 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { useContactSubmissions } from '@/hooks/useContactSubmissions';
 
 const Contact = () => {
   const navigate = useNavigate();
+  const { submitContact, error } = useContactSubmissions();
+  const [form, setForm] = useState({ name: '', company: '', email: '', message: '' });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(false);
+    const ok = await submitContact(form.name, form.email, form.message, form.company);
+    setLoading(false);
+    setSuccess(ok);
+  };
+
   return (
     <div>
       <Navbar />
@@ -27,28 +46,34 @@ const Contact = () => {
               <CardTitle className="text-center text-2xl">Submit Your Inquiry</CardTitle>
             </CardHeader>
             <CardContent>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name" style={{ color: 'white', fontFamily: 'Inter, sans-serif' }}>Name</Label>
-                    <Input id="name" name="name" placeholder="Your full name" required style={{ color: 'white', fontFamily: 'Inter, sans-serif' }} />
+                    <Input id="name" name="name" value={form.name} onChange={handleChange} placeholder="Your full name" required style={{ color: 'white', fontFamily: 'Inter, sans-serif' }} />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="company" style={{ color: 'white', fontFamily: 'Inter, sans-serif' }}>Company</Label>
-                    <Input id="company" name="company" placeholder="Your company" style={{ color: 'white', fontFamily: 'Inter, sans-serif' }} />
+                    <Input id="company" name="company" value={form.company} onChange={handleChange} placeholder="Your company" style={{ color: 'white', fontFamily: 'Inter, sans-serif' }} />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email" style={{ color: 'white', fontFamily: 'Inter, sans-serif' }}>Email</Label>
-                  <Input id="email" name="email" type="email" placeholder="your.email@company.com" required style={{ color: 'white', fontFamily: 'Inter, sans-serif' }} />
+                  <Input id="email" name="email" type="email" value={form.email} onChange={handleChange} placeholder="your.email@company.com" required style={{ color: 'white', fontFamily: 'Inter, sans-serif' }} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message" style={{ color: 'white', fontFamily: 'Inter, sans-serif' }}>Message</Label>
-                  <Textarea id="message" name="message" placeholder="Tell us about your project requirements..." rows={4} required style={{ color: 'black', fontFamily: 'Inter, sans-serif' }} />
+                  <Textarea id="message" name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your project requirements..." rows={4} required style={{ color: 'black', fontFamily: 'Inter, sans-serif' }} />
                 </div>
-                <Button type="submit" className="w-full animate-pulse-glow">
-                  Submit Inquiry
+                <Button type="submit" className="w-full animate-pulse-glow" disabled={loading}>
+                  {loading ? 'Submitting...' : 'Submit Inquiry'}
                 </Button>
+                {success && (
+                  <div className="text-green-400 text-center mt-2">Thank you! Your inquiry has been submitted.</div>
+                )}
+                {error && (
+                  <div className="text-red-400 text-center mt-2">{error}</div>
+                )}
               </form>
             </CardContent>
           </Card>

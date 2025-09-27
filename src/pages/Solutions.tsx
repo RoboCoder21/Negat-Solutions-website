@@ -15,35 +15,61 @@ const Solutions: React.FC = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-16 animate-slide-up">
               <AnimatedText 
-                text="Comprehensive Solutions, Two Key Areas"
+                text="Comprehensive Solutions, Four Key Areas"
                 type="slide"
                 className="text-4xl md:text-5xl font-bold mb-4 font-orbitron"
                 delay={200}
               />
             </div>
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
-              <Link to="/hardware" className="block">
-                <Card className="glass-card group cursor-pointer" style={{ backgroundColor: '#282421', color: 'white' }}>
+            <div className="grid md:grid-cols-4 gap-8 mb-16">
+              <Link to="/hardware" className="block h-full">
+                <Card className="glass-card group cursor-pointer h-full flex flex-col justify-between" style={{ backgroundColor: '#282421', color: 'white', minHeight: '260px' }}>
                   <CardHeader className="text-center">
                     <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-smooth">
                       <Cpu className="h-8 w-8 text-white" />
                     </div>
                     <CardTitle className="text-2xl" style={{ color: '#ff7f00', textShadow: '0 0 16px #ff7f00, 0 0 32px #ff7f00' }}>Hardware Solutions</CardTitle>
                     <CardDescription className="text-white">
-                      Biometric security, AI-powered protection, and downtime tracking.
+                      Improve Operational Efficiency.
                     </CardDescription>
                   </CardHeader>
                 </Card>
               </Link>
-              <Link to="/software" className="block">
-                <Card className="glass-card group cursor-pointer" style={{ backgroundColor: '#282421', color: 'white' }}>
+              <Link to="/software" className="block h-full">
+                <Card className="glass-card group cursor-pointer h-full flex flex-col justify-between" style={{ backgroundColor: '#282421', color: 'white', minHeight: '260px' }}>
                   <CardHeader className="text-center">
                     <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-smooth">
                       <Brain className="h-8 w-8 text-white" />
                     </div>
                     <CardTitle className="text-2xl" style={{ color: '#ff7f00', textShadow: '0 0 16px #ff7f00, 0 0 32px #ff7f00' }}>Software Solutions</CardTitle>
                     <CardDescription className="text-white">
-                      Custom apps and AI automation for smarter business.
+                      Streamline Operations and Enhance User Experience.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+              <Link to="/design" className="block h-full">
+                <Card className="glass-card group cursor-pointer h-full flex flex-col justify-between" style={{ backgroundColor: '#282421', color: 'white', minHeight: '260px' }}>
+                  <CardHeader className="text-center">
+                    <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 transition-smooth">
+                      <span role="img" aria-label="design" style={{ fontSize: 32, color: 'white' }}>🎨</span>
+                    </div>
+                    <CardTitle className="text-2xl" style={{ color: '#ff7f00', textShadow: '0 0 16px #ff7f00, 0 0 32px #ff7f00' }}>Design Solutions</CardTitle>
+                    <CardDescription className="text-white">
+                      We craft design solutions that connect creativity with purpose.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+              <Link to="/ai-automations" className="block h-full">
+                <Card className="glass-card group cursor-pointer h-full flex flex-col justify-between" style={{ backgroundColor: '#282421', color: 'white', minHeight: '260px' }}>
+                  <CardHeader className="text-center">
+                    <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 transition-smooth">
+                      <span role="img" aria-label="automation" style={{ fontSize: 32, color: 'white' }}>🔒</span>
+                    </div>
+                    <CardTitle className="text-2xl" style={{ color: '#ff7f00', textShadow: '0 0 16px #ff7f00, 0 0 32px #ff7f00' }}>AI Automations</CardTitle>
+                    <CardDescription className="text-white">
+                      Automate Repetitive Tasks.
                     </CardDescription>
                   </CardHeader>
                 </Card>

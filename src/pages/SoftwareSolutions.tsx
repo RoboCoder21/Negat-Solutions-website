@@ -37,7 +37,18 @@ const SoftwareSolutions: React.FC = () => {
             <Card className="glass-card" style={{ backgroundColor: '#282421', color: 'white' }}>
               <CardHeader className="text-center">
                 <Brain className="h-12 w-12 text-white mx-auto mb-4" />
-                <CardTitle>AI Automation</CardTitle>
+                <CardTitle>Mobile and Web Applications</CardTitle>
+              </CardHeader>
+              <CardContent>
+                  <p className="text-white text-center">
+                    Intelligent automation to streamline your operations.
+                  </p>
+              </CardContent>
+            </Card>
+                        <Card className="glass-card" style={{ backgroundColor: '#282421', color: 'white' }}>
+              <CardHeader className="text-center">
+                <Brain className="h-12 w-12 text-white mx-auto mb-4" />
+                <CardTitle>Integration with Existing Systems (ERP/CRM)</CardTitle>
               </CardHeader>
               <CardContent>
                   <p className="text-white text-center">
