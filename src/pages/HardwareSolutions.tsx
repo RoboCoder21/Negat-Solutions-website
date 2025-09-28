@@ -39,7 +39,7 @@ const HardwareSolutions: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-white text-center">
-                  Machine learning algorithms for threat detection and automated response systems
+                   AI powered hardware solutions and automated response systems
                 </p>
               </CardContent>
             </Card>
