@@ -13,7 +13,7 @@ const About = () => {
         </h2>
         <div className="text-lg md:text-xl leading-relaxed" style={{ maxWidth: 700, textAlign: 'center', fontFamily: 'Inter, sans-serif', color: 'white' }}>
           <p>
-            At Negat Solutions, we combine years of expertise in hardware integration with advanced software development to deliver comprehensive technology solutions. Our team specializes in biometric security systems, AI-powered automation, and custom applications that drive efficiency and innovation across industries.
+            At Negat Solutions, we combine years of expertise in hardware integration with advanced software development to deliver comprehensive technology solutions. Our team specializes in biometric security systems, AI-powered automation, Design solutions, and custom applications that drive efficiency and innovation across industries.
           </p>
         </div>
       </div>
