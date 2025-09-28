@@ -49,20 +49,20 @@ const Contact = () => {
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name" style={{ color: 'white', fontFamily: 'Inter, sans-serif' }}>Name</Label>
-                    <Input id="name" name="name" value={form.name} onChange={handleChange} placeholder="Your full name" required style={{ color: 'white', fontFamily: 'Inter, sans-serif' }} />
+                    <Label htmlFor="name" style={{ color: 'black', fontFamily: 'Inter, sans-serif' }}>Name</Label>
+                    <Input id="name" name="name" value={form.name} onChange={handleChange} placeholder="Your full name" required style={{ color: 'black', fontFamily: 'Inter, sans-serif' }} />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="company" style={{ color: 'white', fontFamily: 'Inter, sans-serif' }}>Company</Label>
-                    <Input id="company" name="company" value={form.company} onChange={handleChange} placeholder="Your company" style={{ color: 'white', fontFamily: 'Inter, sans-serif' }} />
+                    <Label htmlFor="company" style={{ color: 'black', fontFamily: 'Inter, sans-serif' }}>Company</Label>
+                    <Input id="company" name="company" value={form.company} onChange={handleChange} placeholder="Your company" style={{ color: 'black', fontFamily: 'Inter, sans-serif' }} />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email" style={{ color: 'white', fontFamily: 'Inter, sans-serif' }}>Email</Label>
-                  <Input id="email" name="email" type="email" value={form.email} onChange={handleChange} placeholder="your.email@company.com" required style={{ color: 'white', fontFamily: 'Inter, sans-serif' }} />
+                  <Label htmlFor="email" style={{ color: 'black', fontFamily: 'Inter, sans-serif' }}>Email</Label>
+                  <Input id="email" name="email" type="email" value={form.email} onChange={handleChange} placeholder="your.email@company.com" required style={{ color: 'black', fontFamily: 'Inter, sans-serif' }} />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="message" style={{ color: 'white', fontFamily: 'Inter, sans-serif' }}>Message</Label>
+                  <Label htmlFor="message" style={{ color: 'black', fontFamily: 'Inter, sans-serif' }}>Message</Label>
                   <Textarea id="message" name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your project requirements..." rows={4} required style={{ color: 'black', fontFamily: 'Inter, sans-serif' }} />
                 </div>
                 <Button type="submit" className="w-full animate-pulse-glow" disabled={loading}>
