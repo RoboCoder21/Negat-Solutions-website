@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
         <div className="md:hidden bg-[#3b3127] border-t border-white/10 px-2 py-2 flex flex-col space-y-2">
           <Link to="/" className="text-white text-lg px-4 py-3 rounded hover:bg-[#282421] transition-smooth" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link to="/solutions" className="text-white text-lg px-4 py-3 rounded hover:bg-[#282421] transition-smooth" onClick={() => setMenuOpen(false)}>Solutions</Link>
-          <Link to="/about" className="text-white text-lg px-4 py-3 rounded hover:bg-[#282421] transition-smooth" onClick={() => setMenuOpen(false)}>About Us</Link>
+          <Link to="/about" className="text-white text-lg px-4 py-3 rounded hover:bg-[#282421] transition-smooth" onClick={() => setMenuOpen(false)}>About</Link>
           <Link to="/contact" className="text-white text-lg px-4 py-3 rounded hover:bg-[#282421] transition-smooth" onClick={() => setMenuOpen(false)}>Contact</Link>
           <Link to="/admin" className="text-white text-base px-4 py-3 rounded hover:bg-[#282421] transition-smooth" onClick={() => setMenuOpen(false)}>Admin</Link>
           <Button className="w-full mt-2 animate-pulse-glow text-lg px-4 py-3" onClick={() => { setMenuOpen(false); navigate('/contact'); }}>
