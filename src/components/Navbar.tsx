@@ -36,8 +36,8 @@ const Navbar: React.FC = () => {
             className="text-white focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            <svg width="32" height="32" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M3 6h14M3 10h14M3 14h14" />
+            <svg width="25" height="2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M6 3h10M10 3h10M14 3h10" />
             </svg>
           </button>
         </div>
@@ -45,12 +45,12 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-[#4a3a23] border-t border-white/10 px-2 py-2 flex flex-col space-y-2">
-          <Link to="/" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/solutions" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Solutions</Link>
-          <Link to="/about" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>About</Link>
-          <Link to="/contact" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Contact</Link>
-          <Link to="/admin" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Admin</Link>
-          <Button className="w-full mt-2 animate-pulse-glow text-2xl px-4 py-3 font-extrabold drop-shadow bg-[#ffa726] text-[#4a3a23] hover:bg-[#282421] hover:text-white" onClick={() => { setMenuOpen(false); navigate('/contact'); }}>
+          <Link to="/" className="text-white font-bold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/solutions" className="text-white font-bold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Solutions</Link>
+          <Link to="/about" className="text-white font-bold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>About</Link>
+          <Link to="/contact" className="text-white font-bold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link to="/admin" className="text-white font-bold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Admin</Link>
+          <Button className="w-full mt-2 animate-pulse-glow text-2xl px-4 py-3 font-bold drop-shadow bg-[#ffa726] text-[#4a3a23] hover:bg-[#282421] hover:text-white" onClick={() => { setMenuOpen(false); navigate('/contact'); }}>
             Get a Consultation
           </Button>
         </div>
