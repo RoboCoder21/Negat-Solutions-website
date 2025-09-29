@@ -45,12 +45,12 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-[#4a3a23] border-t border-white/10 px-2 py-2 flex flex-col space-y-2">
-          <Link to="/" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#282421] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/solutions" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#282421] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Solutions</Link>
-          <Link to="/about" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#282421] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>About</Link>
-          <Link to="/contact" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#282421] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Contact</Link>
-          <Link to="/admin" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#282421] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Admin</Link>
-          <Button className="w-full mt-2 animate-pulse-glow text-2xl px-4 py-3 font-extrabold drop-shadow" onClick={() => { setMenuOpen(false); navigate('/contact'); }}>
+          <Link to="/" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/solutions" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Solutions</Link>
+          <Link to="/about" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>About</Link>
+          <Link to="/contact" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link to="/admin" className="text-white font-extrabold text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Admin</Link>
+          <Button className="w-full mt-2 animate-pulse-glow text-2xl px-4 py-3 font-extrabold drop-shadow bg-[#ffa726] text-[#4a3a23] hover:bg-[#282421] hover:text-white" onClick={() => { setMenuOpen(false); navigate('/contact'); }}>
             Get a Consultation
           </Button>
         </div>
