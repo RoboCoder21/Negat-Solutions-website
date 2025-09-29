@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center gap-2">
           <LogoSwitcher />
           <span className="text-xl md:text-2xl font-bold text-left whitespace-nowrap">
-            <span style={{ color: 'white' }}>Negat</span>
+            <span style={{ color: 'white' }}>Nigat</span>
             <span className="text-primary">Solutions</span>
           </span>
         </div>
