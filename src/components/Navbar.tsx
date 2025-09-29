@@ -8,10 +8,10 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
   return (
     <nav className="sticky top-0 w-full border-b border-white/10 z-50" style={{ backgroundColor: '#3b3127' }}>
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex flex-wrap items-center gap-2 w-full md:gap-2">
+      <div className="container mx-auto px-2 py-2 flex flex-col md:flex-row md:items-center md:justify-between items-start justify-start gap-2 md:gap-0 w-full">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-2 w-full">
           <LogoSwitcher />
-          <span className="text-2xl font-bold text-center md:text-left whitespace-nowrap">
+          <span className="text-xl md:text-2xl font-bold text-left md:text-left whitespace-nowrap mt-1 md:mt-0">
             <span style={{ color: 'white' }}>Negat</span>
             <span className="text-primary">Solutions</span>
           </span>
