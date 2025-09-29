@@ -55,7 +55,7 @@ const Index = () => {
               type="gradient"
               className="text-glow font-orbitron text-white"
               delay={0}
-              speed={60}
+              speed={30}
               key={headlineIndex}
             />
           </h1>
@@ -64,7 +64,7 @@ const Index = () => {
               text={'Negat Solutions delivers cutting-edge hardware integration and intelligent software automation to transform your business operations and enhance security protocols.'}
               type="stagger"
               delay={0}
-              speed={60}
+              speed={30}
               key={Date.now() + 1}
             />
           </p>
