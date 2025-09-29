@@ -23,6 +23,7 @@ const Navbar: React.FC = () => {
           <Link to="/about" className="hover:text-primary transition-smooth text-white font-normal text-xl lg:text-2xl px-3 py-2 drop-shadow">About</Link>
           <Link to="/contact" className="hover:text-primary transition-smooth text-white font-normal text-xl lg:text-2xl px-3 py-2 drop-shadow">Contact</Link>
           <Link to="/admin" className="hover:text-primary transition-smooth text-white font-normal text-xl lg:text-2xl px-3 py-2 drop-shadow">Admin</Link>
+          <a href="https://www.linkedin.com/company/nigat-solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-smooth text-white font-normal text-xl lg:text-2xl px-3 py-2 drop-shadow">Follow us on LinkedIn</a>
         </div>
         <div className="hidden md:block">
           <Button className="animate-pulse-glow" onClick={() => navigate('/contact')}>
@@ -50,6 +51,7 @@ const Navbar: React.FC = () => {
           <Link to="/about" className="text-white font-normal text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>About</Link>
           <Link to="/contact" className="text-white font-normal text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Contact</Link>
           <Link to="/admin" className="text-white font-normal text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow" onClick={() => setMenuOpen(false)}>Admin</Link>
+          <a href="https://www.linkedin.com/company/nigat-solutions/" target="_blank" rel="noopener noreferrer" className="text-white font-normal text-2xl px-4 py-3 rounded hover:bg-[#ffa726] hover:text-[#4a3a23] transition-smooth drop-shadow">Follow us on LinkedIn</a>
           <Button className="w-full mt-2 animate-pulse-glow text-2xl px-4 py-3 font-bold drop-shadow bg-[#ffa726] text-[#4a3a23] hover:bg-[#282421] hover:text-white" onClick={() => { setMenuOpen(false); navigate('/contact'); }}>
             Get a Consultation
           </Button>
