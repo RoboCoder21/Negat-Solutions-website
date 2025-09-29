@@ -8,10 +8,10 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
   return (
   <nav className="sticky top-0 w-full border-b border-white/10 z-50 shadow-lg" style={{ backgroundColor: '#4a3a23' }}>
-      <div className="container mx-auto px-2 py-2 flex flex-col md:flex-row md:items-center md:justify-between items-start justify-start gap-2 md:gap-0 w-full">
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-2 w-full">
+      <div className="container mx-auto px-2 py-2 flex items-center justify-between w-full">
+        <div className="flex items-center gap-2">
           <LogoSwitcher />
-          <span className="text-xl md:text-2xl font-bold text-left md:text-left whitespace-nowrap mt-1 md:mt-0">
+          <span className="text-xl md:text-2xl font-bold text-left whitespace-nowrap">
             <span style={{ color: 'white' }}>Negat</span>
             <span className="text-primary">Solutions</span>
           </span>
@@ -36,8 +36,8 @@ const Navbar: React.FC = () => {
             className="text-white focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            <svg width="25" height="2" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M6 3h10M10 3h10M14 3h10" />
+            <svg width="32" height="32" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 6h14M3 10h14M3 14h14" />
             </svg>
           </button>
         </div>
