@@ -139,6 +139,8 @@ const Admin: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  autoComplete="off"
+                  inputMode="email"
                 />
               </div>
               <div className="space-y-2">
@@ -150,6 +152,7 @@ const Admin: React.FC = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
+                  autoComplete="new-password"
                 />
               </div>
               <Button 
