@@ -1,3 +1,51 @@
+/* Custom visibility improvements for mobile */
+.navbar {
+  background-color: #3b3127;
+  color: #fff;
+}
+.navbar-logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+.navbar .text-primary {
+  color: #ffa726;
+}
+
+.solution-card {
+  background: #3b3127;
+  color: #fff;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 16px 2px #ffa72644;
+  padding: 1.5rem 1rem;
+}
+.solution-card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ffa726;
+  text-shadow: 0 0 8px #ffa72699;
+  margin-bottom: 0.5rem;
+}
+.solution-card-desc {
+  font-size: 1rem;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .navbar-logo-text {
+    font-size: 1.1rem;
+  }
+  .solution-card {
+    padding: 1rem 0.5rem;
+  }
+  .solution-card-title {
+    font-size: 1.1rem;
+  }
+  .solution-card-desc {
+    font-size: 0.95rem;
+  }
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
