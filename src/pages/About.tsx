@@ -17,7 +17,7 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-center pb-8">
+      <div className="flex justify-center pb-8" style={{ background: '#16191c' }}>
         <button
           onClick={() => navigate(-1)}
           className="px-6 py-2 rounded text-white font-bold"
