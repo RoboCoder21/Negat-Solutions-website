@@ -3,7 +3,7 @@ import LogoSwitcher from '@/components/LogoSwitcher';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
-const Navbar: React.FC = () => {
+;const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = React.useState(false);
   return (
@@ -23,6 +23,7 @@ const Navbar: React.FC = () => {
           <Link to="/about" className="hover:text-primary transition-smooth text-white font-normal text-xl lg:text-2xl px-3 py-2 drop-shadow">About</Link>
           <Link to="/contact" className="hover:text-primary transition-smooth text-white font-normal text-xl lg:text-2xl px-3 py-2 drop-shadow">Contact</Link>
           <Link to="/admin" className="hover:text-primary transition-smooth text-white font-normal text-xl lg:text-2xl px-3 py-2 drop-shadow">Admin</Link>
+
         </div>
         <div className="hidden md:block">
           <Button className="animate-pulse-glow" onClick={() => navigate('/contact')}>
