@@ -23,7 +23,6 @@ const Navbar: React.FC = () => {
           <Link to="/about" className="hover:text-primary transition-smooth text-white font-normal text-xl lg:text-2xl px-3 py-2 drop-shadow">About</Link>
           <Link to="/contact" className="hover:text-primary transition-smooth text-white font-normal text-xl lg:text-2xl px-3 py-2 drop-shadow">Contact</Link>
           <Link to="/admin" className="hover:text-primary transition-smooth text-white font-normal text-xl lg:text-2xl px-3 py-2 drop-shadow">Admin</Link>
-          <a href="https://www.linkedin.com/company/nigat-solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-smooth text-white font-normal text-xl lg:text-2xl px-3 py-2 drop-shadow">Follow us on LinkedIn</a>
         </div>
         <div className="hidden md:block">
           <Button className="animate-pulse-glow" onClick={() => navigate('/contact')}>
