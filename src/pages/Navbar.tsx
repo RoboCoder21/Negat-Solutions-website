@@ -24,6 +24,7 @@ const Navbar: React.FC = () => {
           <Link to="/contact" className="hover:text-primary transition-smooth text-white text-base lg:text-lg px-2 py-1">Contact</Link>
           <Link to="/admin" className="hover:text-primary transition-smooth text-sm text-white px-2 py-1">Admin</Link>
         </div>
+        
         <div className="hidden md:block">
           <Button className="animate-pulse-glow" onClick={() => navigate('/contact')}>
             Get a Consultation
