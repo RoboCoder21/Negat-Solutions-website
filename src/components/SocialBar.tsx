@@ -74,6 +74,10 @@ const SocialBar: React.FC = () => (
         rel="noopener noreferrer"
         style={{ color: '#fff', transition: 'color 0.2s' }}
         aria-label={s.name}
+        onMouseOver={e => (e.currentTarget.style.color = '#ffa726')}
+        onMouseOut={e => (e.currentTarget.style.color = '#fff')}
+        onTouchStart={e => (e.currentTarget.style.color = '#ffa726')}
+        onTouchEnd={e => (e.currentTarget.style.color = '#fff')}
       >
         {s.icon}
       </a>
