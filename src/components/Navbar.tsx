@@ -34,12 +34,18 @@ const Navbar: React.FC = () => {
         <div className="md:hidden flex items-center">
           <button
             aria-label="Open menu"
-            className="text-white focus:outline-none"
+            className="text-white focus:outline-none flex flex-col justify-center items-center w-10 h-10"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            <svg width="32" height="32" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M3 6h14M3 10h14M3 14h14" />
-            </svg>
+            <span
+              className={`block w-7 h-1 rounded bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}
+            ></span>
+            <span
+              className={`block w-7 h-1 rounded bg-white my-1 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}
+            ></span>
+            <span
+              className={`block w-7 h-1 rounded bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}
+            ></span>
           </button>
         </div>
       </div>
