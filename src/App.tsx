@@ -13,6 +13,7 @@ import SoftwareSolutions from "./pages/SoftwareSolutions";
 import Solutions from "./pages/Solutions";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import SocialBar from "@/components/SocialBar";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <SocialBar />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />

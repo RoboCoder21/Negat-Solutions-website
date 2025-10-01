@@ -31,7 +31,27 @@ const Contact = () => {
   return (
     <div>
       <Navbar />
-      <div style={{ minHeight: '100vh', background: '#16191c', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+  <div style={{ minHeight: '100vh', background: '#16191c', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+      <div className="flex justify-center pb-8" style={{ background: '#16191c' }}>
+        <button
+          onClick={() => navigate(-1)}
+          className="px-6 py-2 rounded text-white font-bold"
+          style={{
+            backgroundColor: '#ff7f00',
+            boxShadow: '0 0 16px #ff7f00, 0 0 32px #ff7f00',
+            textShadow: '0 0 8px #ff7f00',
+            transition: 'all 0.3s',
+          }}
+          onMouseOver={e => {
+            (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#ffa733';
+          }}
+          onMouseOut={e => {
+            (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#ff7f00';
+          }}
+        >
+          Back
+        </button>
+      </div>
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 animate-slide-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 font-orbitron">
