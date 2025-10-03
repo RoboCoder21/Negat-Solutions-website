@@ -19,7 +19,7 @@ const socials = [
     name: 'TikTok',
     url: 'https://www.tiktok.com/@nigat_tech',
     icon: (
-      <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96s4.46 9.96 9.96 9.96 9.96-4.46 9.96-9.96-4.46-9.96-9.96-9.96zm0 18.92c-4.94 0-8.96-4.02-8.96-8.96s4.02-8.96 8.96-8.96 8.96 4.02 8.96 8.96-4.02 8.96-8.96 8.96zm2.5-8.96c0-1.38-1.12-2.5-2.5-2.5s-2.5 1.12-2.5 2.5 1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5zm-2.5 1.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+      <img src="/images/Tiktok_icon.svg-removebg-preview.png" alt="TikTok" width={28} height={28} style={{ display: 'block' }} />
     ),
   },
   {
