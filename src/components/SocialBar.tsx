@@ -74,10 +74,26 @@ const SocialBar: React.FC = () => (
         rel="noopener noreferrer"
         style={{ color: '#fff', transition: 'color 0.2s' }}
         aria-label={s.name}
-        onMouseOver={e => (e.currentTarget.style.color = '#ffa726')}
-        onMouseOut={e => (e.currentTarget.style.color = '#fff')}
-        onTouchStart={e => (e.currentTarget.style.color = '#ffa726')}
-        onTouchEnd={e => (e.currentTarget.style.color = '#fff')}
+        onMouseOver={e => {
+          e.currentTarget.style.color = '#ffa726';
+          const img = e.currentTarget.querySelector('img');
+          if (img) img.style.filter = 'drop-shadow(0 0 6px #ffa726) brightness(1.2)';
+        }}
+        onMouseOut={e => {
+          e.currentTarget.style.color = '#fff';
+          const img = e.currentTarget.querySelector('img');
+          if (img) img.style.filter = '';
+        }}
+        onTouchStart={e => {
+          e.currentTarget.style.color = '#ffa726';
+          const img = e.currentTarget.querySelector('img');
+          if (img) img.style.filter = 'drop-shadow(0 0 6px #ffa726) brightness(1.2)';
+        }}
+        onTouchEnd={e => {
+          e.currentTarget.style.color = '#fff';
+          const img = e.currentTarget.querySelector('img');
+          if (img) img.style.filter = '';
+        }}
       >
         {s.icon}
       </a>
