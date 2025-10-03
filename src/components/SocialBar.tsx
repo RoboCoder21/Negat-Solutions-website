@@ -19,7 +19,7 @@ const socials = [
     name: 'TikTok',
     url: 'https://www.tiktok.com/@nigat_tech',
     icon: (
-      <img src="/images/Tiktok_icon.svg-removebg-preview.png" alt="TikTok" width={28} height={28} style={{ display: 'block' }} />
+      <img src="/images/Tiktok_icon.svg.png" alt="TikTok" width={28} height={28} style={{ display: 'block' }} />
     ),
   },
   {
