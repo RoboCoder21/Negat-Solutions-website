@@ -3,7 +3,7 @@ import LogoSwitcher from '@/components/LogoSwitcher';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
-;const Navbar: React.FC = () => {
+const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = React.useState(false);
   return (
